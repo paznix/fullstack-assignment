@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors"); // For handling Cross-Origin Resource Sharing
+const cors = require("cors"); 
 const dotenv = require("dotenv");
 dotenv.config();
 const connectDB = require("./config/db");
@@ -27,7 +27,6 @@ app.post("/cards", async (req, res) => {
   try {
     const { title, description } = req.body;
 
-    // Validation (you might add more here)
     if (!title || !description) {
       return res
         .status(400)
@@ -39,9 +38,7 @@ app.post("/cards", async (req, res) => {
 
     res.status(201).json(newCard);
   } catch (error) {
-    // Handle potential errors, e.g., duplicate title
     if (error.code === 11000) {
-      // MongoDB duplicate key error
       return res
         .status(400)
         .json({ error: "A card with that title already exists" });
@@ -53,7 +50,7 @@ app.post("/cards", async (req, res) => {
 // Get all cards
 app.get('/cards', async (req, res) => {
     try {
-        const cards = await Card.find(); // Fetch all cards from the database
+        const cards = await Card.find();
         res.json(cards);
     } catch (error) {
         res.status(500).json({ error: 'Internal server error' });
@@ -64,7 +61,7 @@ app.get('/cards', async (req, res) => {
 app.get('/cards/:title', async (req, res) => {
     try {
         const title = req.params.title;
-        const card = await Card.findOne({ title }); // Find a card by title
+        const card = await Card.findOne({ title }); 
 
         if (!card) {
             return res.status(404).json({ error: 'Card not found' });

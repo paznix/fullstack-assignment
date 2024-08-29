@@ -12,11 +12,11 @@ function App() {
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        const response = await fetch("http://localhost:5000/cards"); // Replace with your actual API endpoint
+        const response = await fetch("http://localhost:5000/cards");
         if (response.ok) {
           const data = await response.json();
           setCardsData(data);
-          setFilteredCards(data); // Initially, show all cards
+          setFilteredCards(data); 
         } else {
           console.error("Error fetching cards:", response.statusText);
         }
