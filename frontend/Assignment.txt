@@ -1,0 +1,3 @@
+1. We can implement shared functionality across component tree using several approaches like creating HOCs, effective for tightly coupled components, Rendering props offering flexibility in utilizing shared logic and also with the help of context API which is ideal for prop drilling scenarios across multiple components.
+
+2. The useState excels in managing the state within complex components due to its simplicity , flexibility and seamless integration with React's reactive rendering model. It allows you to declare and update multiple state variables independently. Its compatibility with other hooks like useEffect also enhances the code organization and maintainability in complex application.
