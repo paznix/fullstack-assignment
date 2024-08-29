@@ -14,9 +14,9 @@ const Search = ({ onSearch }) => {
         <h2 className="text-4xl md:text-6xl font-medium text-center">
           How can we help?
         </h2>
-        <div className="bg-white flex justify-center items-center border border-black border-3 w-1/3 rounded-md px-3">
+        <div className="bg-white flex justify-center items-center border border-black border-3 md:w-1/3 rounded-md px-3">
           <input
-            className=" focus:outline-none w-full py-3 px-3 text-xl rounded-md"
+            className=" focus:outline-none w-full py-3 px-3 text-xl rounded-md bg-transparent"
             type="search"
             name="search"
             id="search"
